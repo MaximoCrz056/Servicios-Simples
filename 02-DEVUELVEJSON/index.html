@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Servicio que devuelve JSON</title>
+    <link rel="stylesheet" href="./lib/styles/styles.css">
+    <link rel="shortcut icon" href="../ojo.svg" type="image/x-icon">
+
+</head>
+
+<body>
+    <header>
+        <a href="../index.html">
+            <p>
+                <button>
+                    <img src="../home.svg" alt="icon-home">
+
+                </button>
+            </p>
+        </a>
+    </header>
+
+    <h1>Servicio que devuelve JSON</h1>
+
+    <p><button onclick="resultado()">Resultado</button></p>
+
+    <script type="module">
+
+        import { exportaAHtml } from "./lib/js/exportaAHtml.js"
+        import { consumeJson } from "./lib/js/consumeJson.js"
+        import { muestraError } from "./lib/js/muestraError.js"
+
+        async function resultado() {
+            try {
+                const respuesta =
+                    await consumeJson(
+                        "srv/devuelve.php")
+                const body = respuesta.body
+                alert(`Nombre: ${body.nombre}\nPlataforma: ${body.plataforma}\nLanzamiento: ${body.lanzamiento}\n`)
+            } catch (error) {
+                muestraError(error)
+            }
+        }
+        exportaAHtml(resultado)
+    </script>
+
+</body>
+
+</html>

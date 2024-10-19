@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Navegación</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <h1>Servicios básicos</h1>
+        <h2>Equipo de desarrollo PPC</h2>
+        <ul>
+            <li>233241149 ARELLANES MENDOZA ABRAHAM</li>
+            <li>233241180 CHAVARRIA SANCHEZ URIEL</li>
+            <li>233241148 GOMEZ CRUZ MAXIMO</li>
+            <li>233241052 GREGORIO GONZALEZ ALEXIS GIOVANI</li>
+            <li>233241088 MENDEZ MONTERO VICTOR ABRAHAN</li>
+            <li>233241115 PIMENTEL NAVARRO BRANDON AXEL</li>
+            <li>233241128 ROMERO LAGUNA KIMBERLY JAZMIN</li>
+            <li>233241144 VIVAR TUFIÑO ALEJANDRO ISRAEL</li>
+        </ul>
+        <p>Servicios de desarrollo de aplicaciones web</p>
+        <ul>
+            <li>
+                <a href="01 REFRAN/index.html">
+                    <img src="img/ñ.png" alt="Refrán">
+                    Refrán
+                </a>
+            </li>
+            <li>
+                <a href="02-DEVUELVEJSOn/index.html">
+                    <img src="img/json.png" alt="Devuelve">
+                    Devuelve
+                </a>
+            </li>
+            <li>
+                <a href="03-ED-JSON/index.html">
+                    <img src="img/json2.png" alt="">
+                    Envia y Devuelve JSON
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+
+    nav {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        color: #2c3e50;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        font-family: 'Playfair Display', serif;
+        color: #34495e;
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+
+    ol {
+        padding-left: 0;
+        list-style-position: inside;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-style: italic;
+        color: #7f8c8d;
+        margin: 20px 0;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    ul li {
+        flex: 0 1 calc(50% - 10px);
+        max-width: 200px;
+    }
+
+    ul li a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        background-color: #4b0082;
+        padding: 10px;
+        border-radius: 4px;
+        text-align: center;
+        transition: all 0.3s ease;
+        font-family: 'Playfair Display', serif;
+        font-weight: 600;
+    }
+
+    ul li a:hover {
+        background-color: #3a006b;
+        transform: scale(1.05);
+    }
+
+    ul li a img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+        transition: transform 0.3s ease;
+        background-color: #4b0082;
+    }
+
+    ul li a:hover img {
+        transform: scale(1.1);
+    }
+
+    @media (max-width: 600px) {
+        ul li {
+            flex: 0 1 100%;
+        }
+    }
+</style>
+
+</html>

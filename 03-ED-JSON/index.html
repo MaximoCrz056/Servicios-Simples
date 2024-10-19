@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Servicio que recibe y devuelve JSON</title>
+  <link rel="stylesheet" href="./lib/styles/styles.css">
+</head>
+
+<body>
+  <header>
+    <a href="../index.html">
+      <p>
+        <button>
+          <img src="../home.svg" alt="icon-home">
+        </button>
+      </p>
+    </a>
+  </header>
+
+  <h1>Servicio que recibe y devuelve JSON</h1>
+
+  <!-- Formulario para enviar JSON -->
+  <form id="jsonForm">
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre" required>
+
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" placeholder="Introduce tu apellido" required>
+
+    <div class="button-container">
+      <button type="submit">Envía JSON</button>
+    </div>
+
+  </form>
+
+  <script type="module">
+    import { exportaAHtml } from "./lib/js/exportaAHtml.js"
+    import { muestraError } from "./lib/js/muestraError.js"
+    import { enviaJson } from "./lib/js/enviaJson.js"
+
+    async function envia(event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const apellido = document.getElementById("apellido").value;
+
+      const datos = {
+        saludo: "Hola",
+        nombre: nombre,
+        apellido: apellido,
+      };
+
+      try {
+        document.getElementById("jsonForm").reset();
+        
+        const respuesta = await enviaJson("srv/json.php", datos);
+        alert(respuesta.body);
+
+      } catch (error) {
+        muestraError(error);
+      }
+    }
+
+    document.getElementById("jsonForm").addEventListener("submit", envia);
+    exportaAHtml(envia);
+  </script>
+
+</body>
+
+</html>
